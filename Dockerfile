@@ -9,13 +9,13 @@ ARG JDK_BUILD_VERSION=b964.1
 
 ARG CMDLINE_VERSION
 ARG SDK_TOOLS_VERSION
-ARG BUILD_TOOLS
+ARG BUILD_TOOLS_VERSION
 ARG TARGET_SDK
 
 ENV ANDROID_SDK_ROOT="/opt/sdk"
 ENV ANDROID_HOME=${ANDROID_SDK_ROOT}
 ENV JAVA_HOME="/usr/lib/jvm/default-jvm"
-ENV PATH=$PATH:${ANDROID_SDK_ROOT}/build-tools/${BUILD_TOOLS}:${ANDROID_SDK_ROOT}/cmdline-tools/${CMDLINE_VERSION}/bin:${ANDROID_SDK_ROOT}/platform-tools:${ANDROID_SDK_ROOT}/extras/google/instantapps
+ENV PATH=$PATH:${ANDROID_SDK_ROOT}/build-tools/${BUILD_TOOLS_VERSION}:${ANDROID_SDK_ROOT}/cmdline-tools/${CMDLINE_VERSION}/bin:${ANDROID_SDK_ROOT}/platform-tools:${ANDROID_SDK_ROOT}/extras/google/instantapps
 
 ENV LD_PRELOAD=/lib/libgcompat.so.0
 
@@ -33,7 +33,7 @@ RUN apk add --no-cache bash curl git gzip unzip openssh-client python3 gcompat f
     mv ${ANDROID_SDK_ROOT}/cmdline-tools/* ${ANDROID_SDK_ROOT}/cmdline-tools/${CMDLINE_VERSION} && \
     yes | sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --licenses && \
     sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --install "platform-tools" "extras;google;instantapps" && \
-    sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --install "build-tools;${BUILD_TOOLS}" "platforms;android-${TARGET_SDK}" && \
+    sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --install "build-tools;${BUILD_TOOLS_VERSION}" "platforms;android-${TARGET_SDK}" && \
     sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --uninstall emulator && \
     rm -rf /tmp/* && rm -rf /var/cache/apk/*
 
