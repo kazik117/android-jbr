@@ -100,7 +100,7 @@ jobs:
             JDK_BUILD_VERSION=${{ env.JDK_BUILD_VERSION }}
             CMDLINE_VERSION=${{ env.CMDLINE_VERSION }}
             SDK_TOOLS_VERSION=${{ env.SDK_TOOLS_VERSION }}
-            BUILD_TOOLS=${{ env.BUILD_TOOLS }}
+            BUILD_TOOLS_VERSION=${{ env.BUILD_TOOLS_VERSION }}
             TARGET_SDK=${{ matrix.android }}
 
       # Sign the resulting Docker image digest except on PRs.
