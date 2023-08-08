@@ -19,7 +19,7 @@ ENV PATH=$PATH:${ANDROID_SDK_ROOT}/build-tools/${BUILD_TOOLS_VERSION}:${ANDROID_
 
 ENV LD_PRELOAD=/lib/libgcompat.so.0
 
-RUN apk add --no-cache bash curl git gzip unzip openssh-client python3 gcompat freetype-dev fontconfig font-dejavu && \
+RUN apk add --no-cache bash curl git gzip unzip openssh-client python3 gcompat fontconfig font-dejavu && \
     fc-cache --force && \
     curl -sL https://cache-redirector.jetbrains.com/intellij-jbr/jbrsdk-${JDK_FULL_VERSION}-linux-x64-${JDK_BUILD_VERSION}.tar.gz | tar -C /tmp -xzf - && \
     mkdir -p /usr/lib/jvm && \
@@ -32,7 +32,7 @@ RUN apk add --no-cache bash curl git gzip unzip openssh-client python3 gcompat f
     unzip -qq /tmp/tools.zip -d ${ANDROID_SDK_ROOT}/cmdline-tools && \
     mv ${ANDROID_SDK_ROOT}/cmdline-tools/* ${ANDROID_SDK_ROOT}/cmdline-tools/${CMDLINE_VERSION} && \
     yes | sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --licenses && \
-    sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --install "platform-tools" "extras;google;instantapps" && \
+    sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --install "platform-tools" "patcher;v4" "extras;google;instantapps" && \
     sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --install "build-tools;${BUILD_TOOLS_VERSION}" "platforms;android-${TARGET_SDK}" && \
     sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --uninstall emulator && \
     rm -rf /tmp/* && rm -rf /var/cache/apk/*
