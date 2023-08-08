@@ -9,7 +9,7 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  LATEST_ANDROID_PLATFORM: 33
+  LATEST_ANDROID_PLATFORM: 34
   LATEST_JDK: 17
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        android: [33]
+        android: [33, 34]
         jdk: [17]
     permissions:
       contents: read
@@ -46,11 +46,12 @@ jobs:
               JDK_BUILD_VERSION="b966.2" ;;
           esac
           
-          CMDLINE_VERSION="9.0"
-          SDK_TOOLS_VERSION="9477386"
+          CMDLINE_VERSION="11.0"
+          SDK_TOOLS_VERSION="10406996"
           
           case ${{ matrix.android }} in
             33) BUILD_TOOLS_VERSION="33.0.2" ;;
+            34) BUILD_TOOLS_VERSION="34.0.0" ;;
           esac
           
           echo "JDK_MINOR=${JDK_MINOR}" >> $GITHUB_ENV
