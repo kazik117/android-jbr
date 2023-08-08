@@ -7,16 +7,35 @@ There is one variant at this time which uses JDK17 based on Jetbrains Runtime JD
 ## Tags
 | API level       | JDK17                                               |
 |-----------------|-----------------------------------------------------|
-| Android 13 (33) | `android-33-jdk17` `latest` `latest-jdk17`          |
+| Android 14 (34) | `android-34-jdk17` `latest` `latest-jdk17`          |
+| Android 13 (33) | `android-33-jdk17`                                  |
 
 ## Contents
-This image is based on Alpine 3.18 with bash, curl, git, openssh and python3 installed.
+These images are based on Alpine 3.18 with bash, curl, git, openssh and python3 installed.
+
+<details>
+    <summary>Contents of the Android 14 (34) image</summary>
+
 | Path                      | Version | Description                         |
 | -------                   | ------- | -------                             |
-| build-tools;33.0.2        | 33.0.2  | Android SDK Build-Tools 33.0.2      |
-| extras;google;instantapps | 1.9.0   | Google Play Instant Development SDK |
-| platform-tools            | 34.0.3  | Android SDK Platform-Tools          |
-| platforms;android-33      | 2       | Android SDK Platform 33             |
+| build-tools;34.0.0        | 34.0.0  | Android SDK Build-Tools 34          | build-tools/34.0.0
+| extras;google;instantapps | 1.9.0   | Google Play Instant Development SDK | extras/google/instantapps
+| patcher;v4                | 1       | SDK Patch Applier v4                | patcher/v4
+| platform-tools            | 34.0.4  | Android SDK Platform-Tools          | platform-tools
+| platforms;android-34      | 1       | Android SDK Platform 34             | platforms/android-34
+</details>
+
+<details>
+    <summary>Contents of the Android 13 (33) image</summary>
+
+| Path                      | Version | Description                         |
+| -------                   | ------- | -------                             |
+| build-tools;33.0.2        | 33.0.2  | Android SDK Build-Tools 33.0.2      | build-tools/33.0.2
+| extras;google;instantapps | 1.9.0   | Google Play Instant Development SDK | extras/google/instantapps
+| patcher;v4                | 1       | SDK Patch Applier v4                | patcher/v4
+| platform-tools            | 34.0.4  | Android SDK Platform-Tools          | platform-tools
+| platforms;android-33      | 2       | Android SDK Platform 33             | platforms/android-33
+</details>
 
 ## License
 ```
