@@ -43,7 +43,7 @@ jobs:
             17)
               JDK_MINOR="0"
               JDK_PATCH="7"
-              JDK_BUILD_VERSION="b966.2" ;;
+              JDK_BUILD_VERSION="b1000.6" ;;
           esac
           
           CMDLINE_VERSION="11.0"
