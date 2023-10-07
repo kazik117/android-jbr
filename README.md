@@ -10,6 +10,16 @@ There is one variant at this time which uses JDK17 based on Jetbrains Runtime JD
 | Android 14 (34) | `android-34-jdk17` `latest` `latest-jdk17`          |
 | Android 13 (33) | `android-33-jdk17`                                  |
 
+## Usage
+To install from the command line:
+
+```docker pull ghcr.io/kazik117/android-jbr:<tag>```
+
+Use as the base image in Dockerfile
+
+```FROM ghcr.io/kazik117/android-jbr:<tag>```
+
+
 ## Contents
 These images are based on Alpine 3.18 with bash, curl, git, openssh and python3 installed.
 
@@ -22,7 +32,7 @@ These images are based on Alpine 3.18 with bash, curl, git, openssh and python3 
 | extras;google;instantapps | 1.9.0   | Google Play Instant Development SDK | extras/google/instantapps
 | patcher;v4                | 1       | SDK Patch Applier v4                | patcher/v4
 | platform-tools            | 34.0.4  | Android SDK Platform-Tools          | platform-tools
-| platforms;android-34      | 1       | Android SDK Platform 34             | platforms/android-34
+| platforms;android-34      | 2       | Android SDK Platform 34             | platforms/android-34
 </details>
 
 <details>
@@ -34,7 +44,7 @@ These images are based on Alpine 3.18 with bash, curl, git, openssh and python3 
 | extras;google;instantapps | 1.9.0   | Google Play Instant Development SDK | extras/google/instantapps
 | patcher;v4                | 1       | SDK Patch Applier v4                | patcher/v4
 | platform-tools            | 34.0.4  | Android SDK Platform-Tools          | platform-tools
-| platforms;android-33      | 2       | Android SDK Platform 33             | platforms/android-33
+| platforms;android-33      | 3       | Android SDK Platform 33             | platforms/android-33
 </details>
 
 ## License
